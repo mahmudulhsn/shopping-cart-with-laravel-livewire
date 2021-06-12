@@ -7,6 +7,13 @@
     </x-slot>
 
     <div class="py-12">
-        @livewire('products-table')
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="grid grid-cols-2">
+                @livewire('products-table')
+                @livewire('cart-list')
+            </div>
+            </div>
+        </div>
     </div>
 </x-app-layout>
