@@ -41,8 +41,33 @@ class CartList extends Component
                 'quantity' => $product->quantity + $cartProduct->qty
             ]);
         }
-
         Cart::destroy();
+
+        $this->emit('cart_updated');
+        $this->emit('stock_updated');
+    }
+
+    public function addUpdateCart($rowId, $productID, $qty)
+    {
+        Cart::update($rowId, $qty+1);
+
+        $product = Product::findOrFail($productID);
+        $product->update([
+            'quantity' => $product->quantity - 1,
+        ]);
+
+        $this->emit('cart_updated');
+        $this->emit('stock_updated');
+    }
+
+    public function removeUpdateCart($rowId, $productID, $qty)
+    {
+        Cart::update($rowId, $qty-1);
+
+        $product = Product::findOrFail($productID);
+        $product->update([
+            'quantity' => $product->quantity + 1,
+        ]);
 
         $this->emit('cart_updated');
         $this->emit('stock_updated');

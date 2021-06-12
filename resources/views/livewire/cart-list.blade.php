@@ -23,7 +23,10 @@
                 @foreach ($cartProducts as $product)
                 <tr class="bg-white-100 shadow-lg rounded-md">
                 <td class="py-5">{{ $product->name }}</td>
-                <td class="py-5">{{ $product->qty }}</td>
+                <td class="py-5">
+                    <span class="p-2 font-bold text-2xl cursor-pointer" wire:click="removeUpdateCart('{{ $product->rowId }}', {{ $product->id }}, {{ $product->qty }})">-</span>
+                    {{ $product->qty }}
+                    <span class="p-2 font-bold text-2xl cursor-pointer" wire:click="addUpdateCart('{{ $product->rowId }}', {{ $product->id }}, {{ $product->qty }})">+</span>
                 <td class="py-5">{{ number_format($product->price, 2) }}</td>
                 <td class="py-5"><span class="text-red-800 text-xl font-bold cursor-pointer" wire:click="removeProduct('{{ $product->rowId }}', {{ $product->id }}, {{ $product->qty }})">X</span></td>
                 </tr>
