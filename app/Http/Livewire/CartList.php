@@ -29,4 +29,22 @@ class CartList extends Component
         $this->emit('cart_updated');
         $this->emit('stock_updated');
     }
+
+
+    public function clearCart()
+    {
+        $cartProducts = Cart::content();
+        foreach ($cartProducts as $cartProduct) {
+            $product = Product::findOrFail($cartProduct->id);
+
+            $product->update([
+                'quantity' => $product->quantity + $cartProduct->qty
+            ]);
+        }
+
+        Cart::destroy();
+
+        $this->emit('cart_updated');
+        $this->emit('stock_updated');
+    }
 }

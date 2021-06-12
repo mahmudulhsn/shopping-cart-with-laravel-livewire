@@ -1,5 +1,5 @@
 <div>
-    <h2 class="text-2xl font-bold text-center text-red-600">Cart List</h2>
+    <h2><span class="text-2xl font-bold text-green-600">Cart List</span> <span class="float-right font-bold text-red-600 text-xl cursor-pointer" wire:click="clearCart">Clear Cart</span></h2>
     @if ($cartProducts->count() > 0)
         {{-- @foreach ($cartProducts as $product)
         <div class="p-6 bg-white-100 shadow-lg rounded-md">
