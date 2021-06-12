@@ -42,7 +42,7 @@
                 <tr class="p-10 bg-white-100 shadow-lg rounded-md">
                 <td class="py-5"></td>
                 <td class="py-5">Total: </td>
-                <td class="py-5">{{ \Cart::total() }}</td>
+                <td class="py-5">{{ \Cart::priceTotal() }}</td>
                 <td class="py-5"></td>
                 </tr>
             </tfoot>
