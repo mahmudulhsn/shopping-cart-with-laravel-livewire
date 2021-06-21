@@ -28,6 +28,17 @@ class CartList extends Component
 
         $this->emit('cart_updated');
         $this->emit('stock_updated');
+
+        $this->dispatchBrowserEvent('swal', [
+            'title' => 'Item Deleted',
+            'timer'=>3000,
+            'icon'=>'success',
+            'toast'=>true,
+            'position'=>'top-right',
+            'toast' => true,
+            'showConfirmButton' => false,
+            'iconColor' => 'blue',
+        ]);
     }
 
 
@@ -45,6 +56,17 @@ class CartList extends Component
 
         $this->emit('cart_updated');
         $this->emit('stock_updated');
+
+        $this->dispatchBrowserEvent('swal', [
+            'title' => 'Cart has ben cleared.',
+            'timer'=>3000,
+            'icon'=>'success',
+            'toast'=>true,
+            'position'=>'top-right',
+            'toast' => true,
+            'showConfirmButton' => false,
+            'iconColor' => 'blue',
+        ]);
     }
 
     public function addUpdateCart($rowId, $productID, $qty)
@@ -58,6 +80,18 @@ class CartList extends Component
 
         $this->emit('cart_updated');
         $this->emit('stock_updated');
+
+
+        $this->dispatchBrowserEvent('swal', [
+            'title' => 'Cart has ben updated.',
+            'timer'=>3000,
+            'icon'=>'success',
+            'toast'=>true,
+            'position'=>'top-right',
+            'toast' => true,
+            'showConfirmButton' => false,
+            'iconColor' => 'blue',
+        ]);
     }
 
     public function removeUpdateCart($rowId, $productID, $qty)
@@ -71,5 +105,16 @@ class CartList extends Component
 
         $this->emit('cart_updated');
         $this->emit('stock_updated');
+
+        $this->dispatchBrowserEvent('swal', [
+            'title' => 'Cart has ben removed.',
+            'timer'=>3000,
+            'icon'=>'success',
+            'toast'=>true,
+            'position'=>'top-right',
+            'toast' => true,
+            'showConfirmButton' => false,
+            'iconColor' => 'blue',
+        ]);
     }
 }

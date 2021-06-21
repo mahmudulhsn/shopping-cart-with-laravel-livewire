@@ -34,6 +34,11 @@
             </main>
         </div>
 
+        {{-- for sweet alert --}}
+        @include('partials._swal')
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {{-- sweet alert --}}
         @livewireScripts
     </body>
 </html>
