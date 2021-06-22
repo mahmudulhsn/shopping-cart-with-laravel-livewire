@@ -30,14 +30,9 @@ class CartList extends Component
         $this->emit('stock_updated');
 
         $this->dispatchBrowserEvent('swal', [
-            'title' => 'Item Deleted',
-            'timer'=>3000,
+            'title' => 'Item has been removed.',
             'icon'=>'success',
-            'toast'=>true,
-            'position'=>'top-right',
-            'toast' => true,
-            'showConfirmButton' => false,
-            'iconColor' => 'blue',
+            'iconColor'=>'blue',
         ]);
     }
 
@@ -59,12 +54,7 @@ class CartList extends Component
 
         $this->dispatchBrowserEvent('swal', [
             'title' => 'Cart has ben cleared.',
-            'timer'=>3000,
             'icon'=>'success',
-            'toast'=>true,
-            'position'=>'top-right',
-            'toast' => true,
-            'showConfirmButton' => false,
             'iconColor' => 'blue',
         ]);
     }
@@ -84,12 +74,7 @@ class CartList extends Component
 
         $this->dispatchBrowserEvent('swal', [
             'title' => 'Cart has ben updated.',
-            'timer'=>3000,
             'icon'=>'success',
-            'toast'=>true,
-            'position'=>'top-right',
-            'toast' => true,
-            'showConfirmButton' => false,
             'iconColor' => 'blue',
         ]);
     }
@@ -108,12 +93,7 @@ class CartList extends Component
 
         $this->dispatchBrowserEvent('swal', [
             'title' => 'Cart has ben removed.',
-            'timer'=>3000,
             'icon'=>'success',
-            'toast'=>true,
-            'position'=>'top-right',
-            'toast' => true,
-            'showConfirmButton' => false,
             'iconColor' => 'blue',
         ]);
     }

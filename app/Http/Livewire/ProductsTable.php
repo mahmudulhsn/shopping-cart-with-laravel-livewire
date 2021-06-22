@@ -47,12 +47,7 @@ class ProductsTable extends Component
 
         $this->dispatchBrowserEvent('swal', [
             'title' => 'Product has ben added to Cart.',
-            'timer'=>3000,
             'icon'=>'success',
-            'toast'=>true,
-            'position'=>'top-right',
-            'toast' => true,
-            'showConfirmButton' => false,
             'iconColor' => 'blue',
         ]);
     }
